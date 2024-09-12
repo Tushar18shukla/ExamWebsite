@@ -1,0 +1,39 @@
+<header>
+    <div class="logo-container">
+        <a routerLink="/">
+            <img src="assets/logoApp.png" alt="Logo" class="logo">
+        </a>
+        <span class="app-name">AI Test Application</span>
+    </div>
+    <div class="action-container">
+        <span class="no-account">Don't have an account?</span>
+        <button class="sign-up-btn">Sign Up <i class="fas fa-arrow-right"></i></button>
+        <button id="theme-toggle-btn" class="theme-toggle-btn">Dark</button>
+    </div>
+</header>
+<div class="container">
+    <section class="main-content">
+        <div class="image-section">
+            <img src="assets/JoinTestLaptop.png" alt="Test Image" class="test-image">
+        </div>
+        <div class="form-section">
+            <h2>You're about to join a Test...</h2>
+            <div id="error-message" style="color: red; display: none;"></div>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="test-id">Enter Test ID</label>
+                    <input type="text" id="test-id" [(ngModel)]="testId" name="testId" placeholder="Enter Test Id or Test Link" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Enter Password</label>
+                    <input type="password" id="password" [(ngModel)]="password" name="password" placeholder="Enter Test Password" required>
+                </div>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" [(ngModel)]="name" name="name" placeholder="Enter Your Name">
+                </div>
+                <button type="button" id="join-btn" class="join-btn" (click)="joinTest()">Join</button>
+            </form>
+        </div>
+    </section>
+</div>

@@ -1,0 +1,51 @@
+<header>
+  <div class="logo-container">
+    <img src="/assets/logoApp.png" alt="Logo" class="logo">
+    <span class="app-name">AI Test Application</span>
+  </div>
+  <div class="action-container">
+    <a routerLink="#" style="text-decoration: none;">
+      <span class="join-test">Join a Test</span>
+    </a>
+    <button class="sign-up-btn" routerLink="/sign-up">Sign Up</button>
+    <button id="theme-toggle-btn" class="theme-toggle-btn">Dark</button>
+  </div>
+</header>
+
+<div class="container">
+  <section class="main-content">
+    <div class="text-section">
+      <h1 class="title">Simple <span>, Secure ,</span> Free!</h1>
+      <p class="subtitle">India's very own AI test application, made for everyone!</p>
+      <div class="features">
+        <!-- Use click event to open dialog instead of routerLink -->
+        <div class="feature-item test" (click)="openCustomSection()">
+          <i class="fas fa-video"></i>
+          <p style="color: #716262;">Start a Test</p>
+        </div>
+
+        <a routerLink="/join-test" style="text-decoration: none;">
+          <div class="feature-item">
+            <i class="fas fa-user"></i>
+            <p style="color: #716262;">Join a Test</p>
+          </div>
+        </a>
+
+        <a routerLink="/plan-test" style="text-decoration: none;">
+          <div class="feature-item">
+            <i class="fas fa-calendar-alt"></i>
+            <p style="color: #716262;">Plan a Test</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="button-group">
+        <button class="pre-call-test-btn">Run Pre-call Test</button>
+        <a routerLink="/sign-in-page" class="sign-in-btn">Sign in</a>
+      </div>
+    </div>
+    <div class="image-section">
+      <img src="/assets/homeGirl.png" alt="Girl" class="girl-image">
+    </div>
+  </section>
+</div>

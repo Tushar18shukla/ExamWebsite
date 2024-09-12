@@ -1,0 +1,60 @@
+<!-- Header Section -->
+<header>
+    <div class="logo-container">
+        <a routerLink="/">
+            <img src="assets/logoApp.png" alt="Logo" class="logo">
+        </a>
+        <span class="app-name">AI Test Application</span>
+    </div>
+    <div class="action-container">
+        <span class="no-account">Don't have an account?</span>
+        <button class="sign-up-btn" id="signUpButton" (click)="onSignUpClick()">Sign Up</button>
+        <button id="theme-toggle-btn" class="theme-toggle-btn">Dark</button> <!-- Added button -->
+    </div>
+</header>
+
+<div class="container" id="mainContent">
+    <!-- Main Content Section -->
+    <section class="main-content">
+        <div class="image-section">
+            <img src="/assets/SignInGirl.png" alt="Girl" class="girl-image">
+        </div>
+        <div class="form-section">
+            <h2 class="title">Sign in to your account...</h2>
+            <form id="login-form" (ngSubmit)="signIn()" novalidate>
+                <div class="form-group title">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" [(ngModel)]="email" name="email" placeholder="Username or email address..." required>
+                    <small id="email-error" style="color: red; display: none;" *ngIf="emailError">Please enter a valid email address.</small>
+                </div>
+                <div class="form-group title">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" [(ngModel)]="password" name="password" placeholder="Password" required>
+                    <small id="password-error" style="color: red; display: none;" *ngIf="passwordError">Please fill in the password.</small>
+                </div>
+                <div class="form-group remember-me">
+                    <input type="checkbox" id="remember-me">
+                    <label for="remember-me">Remember me</label>
+                </div>
+                <button type="submit" class="sign-in-btn" id="signin">Sign In <i class="fas fa-arrow-right"></i></button>
+            </form>
+            <div class="social-login">
+                <p>SIGN IN WITH</p>
+                <div class="social-buttons">
+                    <button class="google-btn">
+                        <img src="https://id-frontend.prod-east.frontend.public.atl-paas.net/assets/google-logo.5867462c.svg" alt="google">
+                        Google
+                    </button>
+                    <button class="facebook-btn">
+                        <img src="https://accounts.scdn.co/sso/images/new-facebook-icon.eae8e1b6256f7ccf01cf81913254e70b.svg " alt="Facebook">
+                        Facebook
+                    </button>
+                    <button class="apple-btn">
+                        <img src="https://cdn-icons-png.flaticon.com/512/0/747.png" alt="Apple">
+                        Apple
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

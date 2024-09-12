@@ -1,0 +1,411 @@
+:host {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+/* Dark mode styles */
+:host(.dark-mode) {
+    background-color: #333;
+    color: #fff;
+}
+
+header.dark-mode {
+    background-color: #444;
+    border-bottom: 1px solid #555;
+}
+
+.sign-up-btn.dark-mode {
+    background-color: #ff6600;
+    color: #fff;
+    border: 2px solid #ff6600;
+}
+
+.sign-up-btn.dark-mode:hover {
+    background-color: #fff;
+    color: #ff6600;
+}
+
+/* Theme toggle button */
+.theme-toggle-btn {
+    background-color: #ff6600;
+    color: #fff;
+    border: 2px solid #ff6600;
+    border-radius: 20px;
+    padding: 5px 15px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin-left: 10px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    position: fixed;
+    top: 0;
+    width: 98%;
+    z-index: 1000;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 50px;
+    margin-right: 10px;
+}
+
+.app-name {
+    font-weight: bold;
+    font-size: 2rem;
+    color: #716262;
+}
+
+.action-container {
+    display: flex;
+    align-items: center;
+}
+
+.no-account {
+    margin-right: 10px;
+    font-size: 1rem;
+    color: #716262;
+}
+
+.sign-up-btn {
+    background-color: #ff6600;
+    color: #fff;
+    border: 2px solid #ff6600;
+    border-radius: 20px;
+    padding: 5px 15px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.sign-up-btn i {
+    margin-left: 5px;
+}
+
+.sign-up-btn:hover {
+    background-color: #fff;
+    color: #ff6600;
+}
+
+.main-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 100px 20px;
+}
+
+.image-section {
+    max-width: 50%;
+}
+
+.test-image {
+    width: 75%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-section {
+    max-width: 40%;
+    padding-left: 50px;
+}
+
+.form-section h2 {
+    font-size: 24px;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #ff6600;
+}
+
+.join-btn {
+    background-color: #ff6600;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    width: 108%;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    display: block;
+    margin-top: 10px;
+    text-decoration: none;
+}
+
+.join-btn:hover {
+    background-color: #e55b00;
+}
+
+/* Dark mode styles */
+.dark-mode .app-name,
+.dark-mode .no-account,
+.dark-mode .sign-up-btn,
+.dark-mode .title,
+.dark-mode h2,
+.dark-mode label,
+.dark-mode input,
+.dark-mode .join-btn {
+    color: #ffffff;
+}
+
+.dark-mode input[type="text"],
+.dark-mode input[type="password"] {
+    background-color: #333333;
+    color: #ffffff;
+    border-color: #444444;
+}
+
+/* Media Queries for various screen sizes */
+
+@media only screen and (max-width: 1024px) and (min-width: 901px) {
+
+    .logo{
+        width: 90px;
+    }
+    .app-name {
+        font-size: 1.75rem;
+        display: none;
+    }
+
+    .no-account{
+        font-size: 30px;
+        font-weight: 900;
+    }
+
+    .sign-up-btn , .theme-toggle-btn{
+        padding: 10px 20px;
+        font-size: 18px;
+    }
+
+    
+    .main-content {
+        padding: 100px 40px; /* Increased padding for a bigger look */
+    }
+
+    .form-section {
+        padding-left: 40px;
+    }
+
+    .test-image {
+        width: 90%;
+    }
+    
+}
+
+@media only screen and (max-width: 900px) and (min-width: 541px) {
+    header {
+        padding: 10px 15px;
+    }
+
+    .logo-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .logo {
+        width: 80px;
+    }
+
+    .app-name {
+        font-size: 1.5rem;
+        display: none;
+    }
+
+    .action-container {
+        flex-direction: row;
+        margin-left: 0;
+    }
+
+    .no-account{
+        font-size: 25px;
+        font-weight: 900;
+    }
+
+    .sign-up-btn, .theme-toggle-btn {
+        font-size: 0.85rem;
+        padding: 15px 20px;
+        border-radius: 50px;
+    }
+
+    
+
+    .main-content {
+        flex-direction: column;
+        align-items: center;
+        padding: 60px 10px;
+    }
+
+    .image-section, .form-section {
+        max-width: 100%;
+    }
+
+    .test-image {
+        width: 350px;
+    }
+
+    .form-section {
+        padding-left: 20px;
+    }
+}
+
+
+
+@media only screen and (max-width: 540px) {
+    header {
+        padding: 10px 5px;
+    }
+
+    .logo-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo {
+        width: 60px;
+    }
+
+    .app-name {
+        font-size: 1.1rem;
+        display: none;
+    }
+
+    .action-container {
+        flex-direction: row;
+        align-items: center;
+        margin-left: 0;
+    }
+
+    .no-account{
+        font-weight: 900;
+    }
+
+    .sign-up-btn, .theme-toggle-btn {
+        font-size: 0.7rem;
+        padding: 4px 8px;
+        
+    }
+
+    .main-content {
+        flex-direction: column;
+        padding: 20px 5px;
+    }
+
+    .image-section, .form-section {
+        max-width: 100%;
+    }
+
+    .test-image {
+        width: 200px;
+        height: 190px;
+    }
+
+    .form-section {
+        padding-left: 0;
+    }
+}
+
+@media only screen and (max-width: 498px) {
+    header {
+        padding: 5px 0;
+    }
+
+    .logo-container {
+        margin-left: 0;
+        align-items: center;
+    }
+
+    .logo {
+        width: 50px;
+    }
+
+    .app-name {
+        font-size: 1rem;
+        display: none;
+    }
+
+    .action-container {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .no-account {
+        font-size: 0.7rem;
+        font-weight: 900;
+        margin-bottom: 5px;
+    }
+
+    .sign-up-btn, .theme-toggle-btn {
+        font-size: 0.65rem;
+        padding: 4px 6px;
+    }
+    
+    .container{
+        margin-top: 90px;
+    }
+    .main-content {
+        padding: 10px 5px;
+    }
+
+    .test-image {
+        width: 50%;
+        height: 50%;
+        margin-left: 90px;
+    }
+
+    .form-section {
+        padding-right:15px;
+    }
+
+    .join-btn {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+}

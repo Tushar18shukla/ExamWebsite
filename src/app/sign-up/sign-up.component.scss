@@ -1,0 +1,253 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    margin: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ccc;
+    background-color: white;
+}
+.sign-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+}
+.sign-btn img{
+    width: 22px;
+    height: 22px;
+    margin-left: 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 40px;
+    margin-right: 10px;
+}
+
+.logo h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.header-buttons {
+    display: flex;
+    align-items: center;
+}
+
+.header-buttons a {
+    margin-right: 20px;
+    padding: 8px 16px;
+    background-color: #ff6200;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.header-buttons button {
+    padding: 8px 16px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+header-buttons button:hover {
+    background-color: #f0f0f0;
+}
+
+.container {
+    display: flex;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 29%;
+    margin: 40px auto;
+    background-color: white;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 5px 5px 5px grey;
+    
+}
+.cross-btn{
+    width:20Px;
+    margin-left: 100%;
+}
+
+.image-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.image-section img {
+    max-width: 100%;
+    height: auto;
+}
+
+.form-section {
+    flex: 1;
+    padding: 40px 45px;
+    padding-top: 20px;
+}
+
+
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.name-fields {
+    display: flex;
+    gap: 10px;
+    
+}
+
+input[type="text"], input[type="password"],input[type="Email"] {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+input[type="text"]:nth-child(1) {
+    width: 50%;
+}
+
+input[type="text"]:nth-child(2) {
+    width: 50%;
+}
+
+button[type="submit"] {
+    background-color: #ff6200;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #e55c00;
+}
+
+p {
+    text-align: center;
+    margin: 20px 0 10px;
+}
+
+.social-login {
+    margin-top: 20px;
+    text-align: center;
+    margin-bottom: 15px ;
+    margin-top: 15px;
+}
+
+.social-login h4 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #666;
+}
+
+.social-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.social-buttons button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    transition: background-color 0.3s ease;
+    background-color: #fff;
+    flex: 1;
+   
+}
+.social-buttons button img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.social-buttons button:hover {
+    background-color: #f5f5f5;
+}
+
+
+
+
+
+
+social-buttons button:hover {
+    background-color: #f0f0f0;
+}
+.social-buttons img{
+    width: 20px;
+
+}
+
+.dark-mode {
+    background-color: #333;
+    color: white;
+}
+
+.dark-mode header {
+    background-color: #444;
+    border-bottom: 1px solid #555;
+}
+
+.dark-mode .container {
+    background-color: #555;
+    border: 1px solid #666;
+}
+
+.dark-mode input, .dark-mode button[type="submit"], .dark-mode .social-buttons button {
+    border: 1px solid #777;
+    background-color: #666;
+}
+
+.dark-mode input::placeholder {
+    color: #ddd;
+}
+.description p{
+    margin: 7px 0;
+    text-align: center;
+    font-size: 12px;
+    color: grey;
+    margin-bottom: 15px;
+}
+.closeButton {
+    cursor: pointer;
+    width: 30px; /* Adjust size as needed */
+    height: 30px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}

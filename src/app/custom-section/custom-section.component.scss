@@ -1,0 +1,146 @@
+/* Slide down animation for the popup */
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Custom dialog container for MatDialog */
+.mat-dialog-container {
+  background-color: white;
+  border-radius: 8px;
+  animation: slideDown 0.5s ease-out;  /* Apply the slide down animation */
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 100%;
+  max-width: 600px;
+  position: fixed;   /* Fixes the position relative to the viewport */
+  top: 0;            /* Aligns the popup to the top of the screen */
+  left: 50%;         /* Center horizontally */
+  transform: translateX(-50%);  /* Center horizontally */
+  z-index: 1000;     /* Ensures the popup stays above other elements */
+}
+
+/* Blurred background when dialog is open */
+.custom-backdrop {
+  backdrop-filter: blur(5px);  /* Blur effect */
+  opacity: 0.5;  /* 50% opacity */
+  position: fixed;   /* Make sure the backdrop covers the entire screen */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;   /* Ensure it is behind the dialog but above other content */
+}
+
+/* Main container that holds both sections */
+.box-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border: 1px solid #e0e0e0;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 800px;
+  margin: 0 auto;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+/* Description Section */
+.description-container {
+  flex: 2;
+  margin-right: 20px;
+}
+
+.notification {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f7f8fa;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.description-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.toolbar-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-right: 10px;
+  font-size: 14px;
+  color: #495057;
+}
+
+.description-box {
+  width: 100%;
+  height: 120px;
+  font-size: 14px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.save-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.cancel-btn {
+  background: none;
+  border: none;
+  font-size: 14px;
+  color: #6c757d;
+  cursor: pointer;
+}
+
+/* Options Section */
+.options-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  background-color: #f7f8fa;
+  padding: 10px;
+  margin-bottom: 5px;
+  border-radius: 4px;
+}
+
+.label {
+  font-size: 14px;
+  color: #2f4858;
+}

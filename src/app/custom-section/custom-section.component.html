@@ -1,0 +1,47 @@
+<div class="box-container">
+  <!-- Description Section -->
+  <div class="description-container">
+    <div class="notification">
+      <span class="message">Section Pattern & Structure</span>
+      <span class="close-btn" (click)="closeDialog()">×</span> <!-- Close button -->
+    </div>
+    <div class="description-header">
+      <span class="description-title">Description</span>
+      <button class="menu-button">≡</button>
+    </div>
+
+    <div class="toolbar">
+      <button class="toolbar-btn">Aa</button>
+      <button class="toolbar-btn"><b>B</b></button>
+      <button class="toolbar-btn"><i>I</i></button>
+      <button class="toolbar-btn"><u>U</u></button>
+    </div>
+
+    <textarea class="description-box"
+      placeholder="Pro tip: Hit 'Enter' for a new paragraph, and 'Shift + Enter' for a simple line break."></textarea>
+
+    <div class="action-buttons">
+      <button class="save-btn">Save</button>
+      <button class="cancel-btn" (click)="closeDialog()">Cancel</button> <!-- Close on Cancel -->
+    </div>
+  </div>
+
+  <!-- Options Section -->
+  <div class="options-container">
+    <div class="option">
+      <span class="label">No. of Questions</span>
+    </div>
+
+    <div class="option">
+      <span class="label">Total Marks</span>
+    </div>
+
+    <div class="option selected">
+      <span class="label">Time Allocation</span>
+    </div>
+
+    <div class="option">
+      <span class="label">Randomization</span>
+    </div>
+  </div>
+</div>

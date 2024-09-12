@@ -1,0 +1,41 @@
+<div class="container">
+    <!-- Sign-Up Form Section -->
+    <div class="form-section">
+      <div class="sign-btn">
+        <h2>Sign up for an account...</h2>
+        <img src="assets/remove.png" id="closeButton" alt="Close"> <!-- Added id for the close button -->
+      </div>
+  
+      <form (ngSubmit)="signUpUser()" #signupForm="ngForm">
+        <div class="name-fields">
+          <input type="text" placeholder="First Name" required>
+          <input type="text" placeholder="Surname" required>
+        </div>
+  
+        <input type="email" placeholder="Email" id="email" required [(ngModel)]="email" name="email">
+        <input type="password" placeholder="New Password" id="password" required [(ngModel)]="password" name="password">
+        <div class="description">
+          <p>
+            By clicking Sign Up, you agree to our Terms, Privacy Policy and Cookies Policy. You may receive SMS notifications from us and can opt out at any time.
+          </p>
+        </div>
+        <button type="submit" id="signup" [disabled]="signupForm.invalid">Sign Up</button>
+  
+        <div class="social-login">
+          <h4>Or sign up with</h4>
+          <div class="social-buttons">
+            <button class="google">
+              <img src="https://id-frontend.prod-east.frontend.public.atl-paas.net/assets/google-logo.5867462c.svg" alt="google"> Google
+            </button>
+            <button class="facebook">
+              <img src="https://accounts.scdn.co/sso/images/new-facebook-icon.eae8e1b6256f7ccf01cf81913254e70b.svg" alt="facebook"> Facebook
+            </button>
+            <button class="apple">
+              <img src="https://cdn-icons-png.flaticon.com/512/0/747.png" alt="apple"> Apple
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  

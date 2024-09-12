@@ -1,0 +1,238 @@
+:host {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+/* Dark mode styles */
+:host(.dark-mode) {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+header.dark-mode {
+    background-color: #444;
+    border-bottom: 1px solid #555;
+}
+
+.sign-up-btn.dark-mode {
+    background-color: #ff6600;
+    color: #fff;
+    border: 2px solid #ff6600;
+}
+
+.sign-up-btn.dark-mode:hover {
+    background-color: #fff;
+    color: #ff6600;
+}
+
+/* Theme toggle button */
+.theme-toggle-btn {
+    background-color: #ff6600;
+    color: #fff;
+    border: 2px solid #ff6600;
+    border-radius: 20px;
+    padding: 5px 15px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin-left: 10px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    position: fixed;
+    top: 0;
+    width: 98%;
+    z-index: 1000;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 50px;
+    margin-right: 10px;
+}
+
+.app-name {
+    font-weight: bold;
+    font-size: 2rem;
+    color: #716262;
+}
+
+.action-container {
+    display: flex;
+    align-items: center;
+}
+
+.join-test {
+    margin-right: 10px;
+    font-size: 1rem;
+    color: #716262;
+}
+
+.sign-up-btn {
+    background-color: #ff6600;
+    color: #fff;
+    border: 2px solid #ff6600;
+    border-radius: 20px;
+    padding: 5px 15px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.sign-up-btn:hover {
+    background-color: #fff;
+    color: #ff6600;
+}
+
+.main-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-bottom: 20px;
+}
+
+.text-section {
+    max-width: 100%;
+    flex: 1 1 50%; 
+    padding-right: 20px;
+    box-sizing: border-box;
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #716262;
+    margin: 10px 0;
+}
+
+.features {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    gap: 24px;
+    margin: 32px 0;
+    overflow-x: hidden;
+    width: 60%;
+}
+
+.feature-item {
+    color: #ff6600;
+    flex: 1 1 calc(33.33% - 20px); /* Ensure items take up 33.33% of the container width */
+    margin: 10px 0;
+    min-width: 150px; /* Set a minimum width to prevent them from shrinking too much */
+    box-sizing: border-box; /* Ensure padding and borders are included in the width/height */
+}
+
+.feature-item i {
+    font-size: 2rem;
+    margin-bottom: 8px;
+    margin-left: 15%;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.pre-call-test-btn, .sign-in-btn {
+    padding: 10px 20px;
+    border: 2px solid #ff6600;
+    background-color: #fff;
+    color: #ff6600;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.sign-in-btn {
+    background-color: #ff6600;
+    color: #fff;
+    text-decoration: none;
+}
+
+.pre-call-test-btn:hover, .sign-in-btn:hover {
+    background-color: #fff;
+    color: #ff6600;
+}
+
+.image-section {
+    max-width: 100%;
+    flex: 1 1 19%;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.girl-image {
+    width: 90%;
+    height: auto;
+}
+
+
+/* Responsive design for various screen sizes */
+
+@media(max-width: 1024px) {
+    body{
+        overflow: hidden;
+    }
+    header {
+        padding: 20px 40px;
+        width: 100%;
+    }
+    header .logo-container {
+        margin-left: 40px;
+    }
+    header .logo-container img {
+        width: 80px;
+        height: 80px;
+    }
+    header .logo-container span {
+        font-size: 18px;
+    }
+    header .action-container {
+        margin-left: 15px;
+    }
+    header .action-container a span {
+        font-size: 17px;
+    }
+    header .action-container .sign-up-btn {
+        border-radius: 30px;
+        font-size: 16px;
+        padding: 14px 12px;
+    }
+    header .action-container .theme-toggle-btn {
+        border-radius: 30px;
+        font-size: 16px;
+        padding: 14px;
+    }
+    .features {
+        width: 100%;
+        overflow-x: hidden;
+    }
+}

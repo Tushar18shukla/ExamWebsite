@@ -1,0 +1,32 @@
+<header>
+  <div class="logo-container">
+    <a routerLink="/">
+    <img src="/assets/logoApp.png" alt="Logo" class="logo">
+  </a>
+    <span class="app-name">AI Test Application</span>
+  </div>
+</header>
+
+<div class="container">
+  <div class="content">
+    <div class="left-side">
+      <h1><span style="color: #ff6600;">Type</span> Your <span style="color: #ff6600;">Question:</span></h1>
+      <textarea [(ngModel)]="questionText" name="question" id="question"></textarea>
+      <label for="fileUpload" class="btn file-upload">Bulk Upload</label>
+      <input type="file" id="fileUpload" hidden (change)="onFileUpload($event)" />
+    </div>
+
+    <div class="right-side">
+      <h1> Options:</h1>
+      <input type="text" [(ngModel)]="options[0]" placeholder="Option 1">
+      <input type="text" [(ngModel)]="options[1]" placeholder="Option 2">
+      <input type="text" [(ngModel)]="options[2]" placeholder="Option 3">
+      <input type="text" [(ngModel)]="options[3]" placeholder="Option 4">
+
+      <div class="button-group">
+        <button class="btn save-next" (click)="saveAndNext()">Save & Next</button>
+        <button class="btn save" (click)="save()">Save</button>
+      </div>
+    </div>
+  </div>
+</div>

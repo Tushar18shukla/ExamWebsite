@@ -1,0 +1,24 @@
+<div class="upload-container">
+    <h2>Upload Questions</h2>
+    <input type="file" (change)="onFileSelected($event)" accept=".doc,.docx" />
+  </div>
+  
+  <div class="questions-container">
+    <h3>Questions</h3>
+    <div class="question-bubbles">
+      <div
+        *ngFor="let question of questions; let i = index"
+        class="question-bubble"
+        (click)="selectQuestion(i)"
+        [class.selected]="selectedQuestionIndex === i"
+      >
+        {{ i + 1 }}
+      </div>
+    </div>
+  </div>
+  
+  <div class="question-display">
+    <h3>Question {{ selectedQuestionIndex + 1 }}</h3>
+    <p>{{ selectedQuestion }}</p>
+  </div>
+  

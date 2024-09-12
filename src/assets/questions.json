@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "question": "What is the capital of France?",
+    "options": ["Paris", "London", "Berlin", "Madrid"],
+    "selectedOption": null
+  },
+  {
+    "id": 2,
+    "question": "Which is the largest planet in our solar system?",
+    "options": ["Earth", "Mars", "Jupiter", "Saturn"],
+    "selectedOption": null
+  },
+  {
+    "id": 3,
+    "question": "Who wrote 'Hamlet'?",
+    "options": ["William Shakespeare", "Charles Dickens", "Leo Tolstoy", "Homer"],
+    "selectedOption": null
+  },
+  {
+    "id": 4,
+    "question": "What is the chemical symbol for Water?",
+    "options": ["H2O", "CO2", "O2", "NaCl"],
+    "selectedOption": null
+  },
+  {
+    "id": 5,
+    "question": "What is the speed of light?",
+    "options": ["299,792 km/s", "150,000 km/s", "1,000 km/s", "300,000 km/s"],
+    "selectedOption": null
+  },
+  {
+    "id": 6,
+    "question": "Who painted the Mona Lisa?",
+    "options": ["Leonardo da Vinci", "Vincent van Gogh", "Pablo Picasso", "Claude Monet"],
+    "selectedOption": null
+  },
+  {
+    "id": 7,
+    "question": "What is the boiling point of water at sea level in Celsius?",
+    "options": ["100°C", "90°C", "110°C", "95°C"],
+    "selectedOption": null
+  },
+  {
+    "id": 8,
+    "question": "What is the chemical symbol for Gold?",
+    "options": ["Au", "Ag", "Fe", "Pb"],
+    "selectedOption": null
+  },
+  {
+    "id": 9,
+    "question": "Who wrote 'To Kill a Mockingbird'?",
+    "options": ["Harper Lee", "Mark Twain", "J.K. Rowling", "Ernest Hemingway"],
+    "selectedOption": null
+  },
+  {
+    "id": 10,
+    "question": "Which element is known as the 'building block of life'?",
+    "options": ["Carbon", "Oxygen", "Nitrogen", "Hydrogen"],
+    "selectedOption": null
+  }
+]

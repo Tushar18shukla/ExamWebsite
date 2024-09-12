@@ -1,0 +1,603 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #ece5dd;
+    overflow: hidden;
+ }
+ .top-bar {
+    width: 100%;
+    height: 5%;
+    background: #2a2f32;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    // border-bottom: 2px solid white;
+  }
+
+  .top-bar .top-icons,
+  .top-bar .top-profile {
+    display: flex;
+    align-items: center;
+  }
+
+  .top-bar .top-icons i,
+  .top-bar .top-profile img {
+    margin: 0 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    height: auto;
+  }
+
+  .container {
+    display: flex;
+    height: 96%;
+    padding-top: 2%; 
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .left-sidebar {
+    width: 60px;
+    background: #2a2f32;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    color: white;
+    position: sticky;
+    height: 100%;
+  }
+
+  .left-sidebar .top-icons,
+  .left-sidebar .bottom-icons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .left-section .logo{
+    width: 23%;
+  }
+
+  .left-sidebar img,
+  .left-sidebar i {
+    margin: 20px 0;
+    cursor: pointer;
+  }
+
+  .sidebar {
+    width: 30%;
+    background: #f8f9fa;
+    // border-right: 1px solid #ddd;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    padding-top: 0;
+    height:100%;
+    position: relative; /* Ensure it doesn't scroll into the top-bar */
+  }
+
+  .sidebar::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+  }
+
+  .sidebar .header,
+  .sidebar .search-bar,
+  .sidebar .contact-list {
+    width: 100%;
+    box-sizing: border-box; /* Ensures padding and border are included in width */
+  }
+
+  .chat-section {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    background: #ece5dd;
+    overflow: hidden;
+  }
+
+  .header {
+    background: #075E54;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .header .left-section {
+    display: flex;
+    align-items: center;
+  }
+
+  .header i{
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+
+  .header .icons i {
+    margin-left: 15px;
+    cursor: pointer;
+  }
+
+  .sidebar .search-bar {
+    padding: 7px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .sidebar .search-bar input {
+    width: 94%;
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #ddd;
+    background: #f0f0f0;
+    outline: none;
+  }
+
+  .contact-list {
+    overflow-y: auto;
+    height: calc(100% - 110px);
+  }
+
+  .contact {
+    display: flex;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+
+  .contact:hover {
+    background: #f1f1f1;
+  }
+
+  .contact img {
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+
+  .contact p {
+    margin: 0;
+  }
+
+  .contact .name {
+    font-weight: bold;
+  }
+
+  .contact .message {
+    color: #888;
+  }
+
+  .messages {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: calc(100vh - 5% - 110px); /* Ensures that the content is scrollable only when overflowing */
+  }
+
+  .message {
+    margin-bottom: 20px;
+    display: flex;
+  }
+
+  .message.received {
+    justify-content: flex-start;
+  }
+
+  .message.sent {
+    justify-content: flex-end;
+  }
+
+  .message .content {
+    max-width: 60%;
+    padding: 10px;
+    border-radius: 7.5px;
+  }
+
+  .message.received .content {
+    background: white;
+    border-radius: 7.5px 7.5px 7.5px 0;
+  }
+
+  .message.sent .content {
+    background: #dcf8c6;
+    border-radius: 7.5px 7.5px 0 7.5px;
+  }
+
+  /* Add this to chat-screen.component.scss */
+
+  .timeline {
+    display: flex;
+    justify-content: space-between;
+    // margin-bottom: 20px;
+    // border: 2px solid black;
+    background-color: #075E54;
+    border-radius: 30px;
+    margin-top: 15px;
+    width: 88%;
+  }
+
+  .timeline-item {
+    cursor: pointer;
+    padding: 10px 30px;
+    // border: 1px solid #ccc;
+    // border-radius: 50%;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.26);
+    color: white;
+    border-radius: 30px;
+  }
+
+  .timeline-item:hover{
+    background-color: #075e54;
+  }
+
+  .timeline-item.active {
+    background-color: rgba(0, 0, 0, 0.26);
+    color: white;
+  }
+
+  .timeline-item.active:hover{
+    background-color: #075e54;
+  }
+
+  .timeline-item.held {
+    background-color: rgba(217, 217, 7, 0.841); /* Change to your desired color */
+  }
+
+  .timeline-item.completed {
+    background-color: rgba(144, 238, 144, 0.684); /* Color for answered questions */
+  }
+
+  .timeline-navigation{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .timeline-navigation .backward,
+  .timeline-navigation .forward {
+    background-color: #075E54; /* Light background for buttons */
+    border: none;
+    border-radius: 50%; /* Make the button round */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a shadow effect */
+    transition: background-color 0.3s, transform 0.3s;
+  }
+
+  .timeline-navigation .backward:hover,
+  .timeline-navigation .forward:hover {
+    background-color: #075e54b2; /* Change background color on hover */
+    transform: scale(1.1); /* Slightly enlarge button on hover */
+  }
+
+  .timeline-navigation .backward:disabled,
+  .timeline-navigation .forward:disabled {
+    background-color: #075E54; /* Grey background for disabled buttons */
+    // cursor: not-allowed;
+  }
+
+  .timeline-navigation .backward img,
+  .timeline-navigation .forward img {
+    width: 20px; /* Icon size */
+    height: 20px;
+  }
+
+  .timeline-navigation .backward:disabled img,
+  .timeline-navigation .forward:disabled img {
+    opacity: 0.5; /* Reduce icon opacity for disabled state */
+  }
+
+
+  #questionSection {
+    border: 1px solid #ddd; /* Border around the box */
+    border-radius: 15px 50px 15px 50px; /* Rounded corners */
+    padding: 20px; /* Spacing inside the box */
+    background-color:#377f7678; /* Background color for the box */
+    margin: 90px auto; /* Margin around the box */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Shadow for a lifted effect */
+    width: 60%;
+  }
+  
+  #questionSection h3 {
+    margin-top: 0; /* Remove margin at the top of the heading */
+    font-size: 28px; /* Font size for the question */
+    font-weight: 500;
+  }
+  
+  #optionsDiv {
+    margin-top: 10px; /* Space between the question and options */
+  }
+  
+  #optionsDiv label {
+    display: block; /* Ensure options appear in separate lines */
+    margin-bottom: 10px; /* Space between options */
+    font-size: 18px;
+  }
+  
+  #optionsDiv input[type="radio"] {
+    margin-right: 10px; /* Space between radio button and option text */
+  }
+  
+  button {
+    margin-top: 15px; /* Space above the buttons */
+    padding: 10px 15px; /* Padding inside the buttons */
+    border: none; /* Remove default border */
+    border-radius: 20px; /* Rounded corners */
+    background-color: rgba(0, 0, 0, 0.603); /* Button background color */
+    color: white; /* Button text color */
+    cursor: pointer; /* Change cursor to pointer on hover */
+  }
+
+  .button-container{
+    margin-left: 60%;
+  }
+  
+  button:hover {
+    background-color: #075e54; /* Darker shade on hover */
+  }
+  
+  button:focus {
+    outline: none; /* Remove focus outline */
+  }
+  
+  /* Styling for the timeline buttons (Previous and Next) */
+  .timeline-navigation{
+    display: flex;
+    justify-content: space-between;
+  }
+  .footer {
+    background: #fff;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    border-top: 1px solid #ddd;
+    overflow-x: hidden;
+  }
+
+  .footer input {
+    flex-grow: 1;
+    border: none;
+    padding: 10px;
+    border-radius: 20px;
+    margin-right: 10px;
+    background: #f0f0f0;
+    outline: none;
+  }
+
+  .footer button {
+    background: #075E54;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .footer .fa-smile {
+    color: #075E54;
+    margin-right: 10px;
+  }
+
+  .footer .fa-paperclip {
+    color: #075E54;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+
+  
+
+  /* Hide the file input */
+  .file-input {
+    display: none;
+  }
+
+  /* Modal styles */
+  .modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.4); 
+  }
+
+  .modal-content {
+    background-color: #2a2f32;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 100%;
+    max-width: 400px; 
+    height: 100%; 
+    max-height: 600px;
+    border-radius: 10px;
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    transform: translateY(100%);
+    animation: slide-up 0.4s forwards;
+    overflow-x: hidden;
+  }
+
+  @keyframes slide-up {
+    from {
+      transform: translateY(100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  .close {
+    color: #fff;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: #999;
+    text-decoration: none;
+  }
+
+  .settings-container {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    background: #2a2f32;
+    color: white;
+  }
+
+  .settings-sidebar {
+    width: 30%;
+    background: #2a2f32;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border-right: 1px solid #555;
+  }
+
+  .settings-sidebar .menu-item {
+    margin-bottom: 20px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  .settings-sidebar .menu-item.active,
+  .settings-sidebar .menu-item:hover {
+    background: #40454a;
+  }
+
+  .settings-content {
+    width: 70%;
+    padding: 20px;
+    overflow-y: auto;
+  }
+
+  .settings-content h2 {
+    margin-top: 0;
+  }
+
+  .settings-content p {
+    margin: 10px 0;
+  }
+
+  .settings-content select,
+  .settings-content input[type="checkbox"] {
+    margin-left: 10px;
+  }
+
+  /* Add this CSS to hide the sidebar when the 'hidden' class is added */
+  .hidden {
+    display: none;
+  }
+
+  /* Make chat-section and footer full width when sidebar is hidden */
+  .sidebar.hidden ~ .chat-section {
+    width: 100%;
+  }
+
+  /* .sidebar.hidden ~ .chat-section .footer {
+    width: 99%;
+  } */
+
+  /* Ensure that footer still aligns correctly when full width */
+  .chat-section .footer {
+    position: relative; /* Ensure it's positioned relative to its parent */
+    width: calc(100% - 20px); /* Adjust width to fit within parent with padding */
+    margin: 0; /* Add margin to fit within the container */
+  }
+
+  @media (max-width: 1024px){
+    .container{
+      padding-top: 6%;
+    }
+  }
+  @media (max-width: 900px) and (min-width: 769px){
+    .container{
+      padding-top: 6%;
+    }
+  }
+  
+  @media (max-width: 768px) and (min-width:541px){
+    .container{
+      padding-top: 5%;
+    }
+  }
+
+  @media (max-width: 540px) and (min-width:480px){
+    .container{
+      padding-top: 5%;
+    }
+  }
+  @media (max-width: 480px) {
+    .container{
+      padding-top: 9%;
+    }
+  }
+@media (max-width: 768px) {
+.sidebar {
+  display: none;
+}
+
+/* Adjust the chat-section to take full width */
+.chat-section {
+  width: 100%;
+}
+
+/* Make sure the footer is full width when sidebar is hidden */
+.chat-section .footer {
+  width: calc(100% - 20px); /* Adjust width to fit within parent */
+}
+}
+
+/* Show the sidebar when the menu icon is clicked */
+@media (max-width: 768px) {
+.sidebar.hidden {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 70%;
+  background: #f8f9fa;
+  z-index: 1000;
+  overflow-y: auto;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  transform: translateX(-100%);
+}
+
+.sidebar.hidden.show {
+  transform: translateX(0);
+}
+
+/* Adjust the chat-section width when sidebar is shown */
+.chat-section.expanded {
+  width: 100%;
+}
+}

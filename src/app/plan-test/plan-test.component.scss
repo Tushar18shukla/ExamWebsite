@@ -1,0 +1,153 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    position: fixed;
+    top: 0;
+    width: 98%;
+    z-index: 1000;
+  }
+  
+  .logo-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    width: 50px;
+    margin-right: 10px;
+  }
+  
+  .app-name {
+    font-weight: bold;
+    font-size: 2rem;
+    color: #716262;
+  }
+  
+  .action-container {
+    display: flex;
+    align-items: center;
+  }
+  .sign-up-btn {
+    background-color: #ff6600;
+    color: #fff;
+    border: 2px solid #ff6600;
+    border-radius: 20px;
+    padding: 5px 15px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .sign-up-btn:hover {
+    background-color: #fff;
+    color: #ff6600;
+  }
+  
+  .theme-toggle-btn{
+    background-color: #ff6600;
+    color: #fff;
+    border: 2px solid #ff6600;
+    border-radius: 20px;
+    padding: 5px 15px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .content {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10%;
+  }
+  
+  .left-side,
+  .right-side {
+    width: 48%;
+  }
+  
+  label {
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: block;
+  }
+  
+  input[type="text"]  {
+    width: 96%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 2px solid black;
+    border-radius: 4px;
+    font-size: 20px;
+    
+  }
+  textarea[id="question"] {
+    height: 63%;
+    width: 100%;
+    border: 2px solid black;
+    font-size: 30px;
+  }
+
+  input[type="file"] {
+    display: none;
+  }
+  
+  /* Style the label as a button */
+  .file-upload {
+    padding: 8px 13px;
+    margin-top: 7px;
+    cursor: pointer;
+    background-color: #ffa200; /* Button background color */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    display: inline-block; /* Ensures it behaves like a button */
+  }
+  
+  .file-upload:hover {
+    background-color: #ffa200b3; /* Hover effect */
+  }
+  
+
+  .button-group {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  
+  .button-group .btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #ff6600;
+    color: #fff;
+  }
+  
+  .button-group .btn.save-next {
+    background-color: #ff6600;
+    margin-left: 65%;
+  }
+
+  .button-group .btn.save-next:hover{
+    background-color: #ff6600b5;
+  }
+  
+  .button-group .btn.save {
+    background-color:rgb(0, 179, 255);
+  }
+
+  .button-group .btn.save:hover{
+    background-color:rgba(0, 179, 255, 0.704);
+  }

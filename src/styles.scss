@@ -1,0 +1,67 @@
+// body {
+//     margin: 0;
+//     font-family: Arial, sans-serif;
+//     display: flex;
+//     justify-content: center;
+    
+//     min-height: 100vh; /* Ensure the content takes up the full height */
+//     flex-direction: column;
+// }
+
+// .container {
+//     max-width: 1200px;
+//     width: 100%; /* Make sure it takes full width */
+//     margin: 0 auto;
+//     padding: 20px;
+// }
+
+// /* Add dark mode styles */
+// body.dark-mode {
+//     background-color: #333;
+//     color: #fff;
+// }
+
+// header.dark-mode {
+//     background-color: #444;
+//     border-bottom: 1px solid #555;
+// }
+
+// .sign-up-btn.dark-mode {
+//     background-color: #ff6600;
+//     color: #fff;
+//     border: 2px solid #ff6600;
+// }
+
+// .sign-up-btn.dark-mode:hover {
+//     background-color: #fff;
+//     color: #ff6600;
+// }
+
+// /* Global theme toggle button styles */
+// .theme-toggle-btn {
+//     background-color: #ff6600;
+//     color: #fff;
+//     border: 2px solid #ff6600;
+//     border-radius: 20px;
+//     padding: 5px 15px;
+//     cursor: pointer;
+//     font-size: 0.9rem;
+//     font-weight: bold;
+//     transition: background-color 0.3s ease;
+//     margin-left: 10px;
+// }
+
+// .theme-toggle-btn.dark-mode {
+//     background-color: #444;
+//     color: #fff;
+//     border-color: #444;
+// }
+
+
+
+
+
+body, html {
+    height: 100%;
+   
+ }

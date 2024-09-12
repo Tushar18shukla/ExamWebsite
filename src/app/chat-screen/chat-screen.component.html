@@ -1,0 +1,188 @@
+<div class="top-bar">
+  <div class="top-icons">
+    <i class="fa-solid fa-ellipsis-vertical"></i>
+    <i class="fa-regular fa-envelope"></i>
+    <i class="fa-solid fa-calendar-days"></i>
+  </div>
+  <div class="top-profile">
+    <!-- Profile Image Placeholder -->
+    <!-- <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-8.webp" alt="avatar" width="40"> -->
+  </div>
+</div>
+
+<div class="container">
+  <div class="left-sidebar" *ngIf="sidebarVisible">
+    <div class="top-icons">
+      <i class="fas fa-bars icon" (click)="toggleSidebar()"></i>
+      <i class="fas fa-comment-dots"></i>
+      <i class="fas fa-phone-alt"></i>
+    </div>
+    <div class="bottom-icons">
+      <i class="fas fa-circle-notch"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-cog" id="settings-icon" (click)="toggleSettings()"></i>
+      <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-8.webp" alt="avatar" width="40">
+    </div>
+  </div>
+
+  <div class="sidebar">
+    <div class="header">
+      <div class="left-section">
+        <!-- <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-8.webp" alt="avatar" width="40"> -->
+        <i class="fa-solid fa-arrow-left" (click)="toggleSidebar()"></i>
+        <h5 class="mb-0">Chats</h5>
+      </div>
+      <div class="icons">
+        <i class="fas fa-search"></i>
+        <i class="fas fa-ellipsis-v"></i>
+      </div>
+    </div>
+
+    <div class="search-bar">
+      <input type="text" [(ngModel)]="searchTerm" (input)="filterContacts()" placeholder="Search or start new chat">
+    </div>
+
+    <div class="contact-list">
+      <div *ngFor="let contact of contacts" class="contact" (click)="selectContact(contact)">
+        <div>
+          <p class="name">{{ contact.name }}</p>
+          <p class="message">{{ contact.message }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="chat-section">
+    <div class="header">
+      <div class="left-section">
+        <img src="/assets/logoApp.png" alt="Logo" class="logo">
+        <!-- <h5 class="mb-0" id="chat-name">{{ chatName }}</h5> -->
+      </div>
+      <div class="icons">
+        <i class="fas fa-search"></i>
+        <i class="fas fa-ellipsis-v"></i>
+      </div>
+    </div>
+
+    <div class="messages">
+      <div *ngFor="let message of messages" [ngClass]="message.type">
+        <div class="content">
+          <p>{{ message.content }}</p>
+        </div>
+      </div>
+
+      <div class="timeline-navigation">
+        <button class="backward" (click)="previousPage()" [disabled]="currentPage === 0">
+          <img src="assets/backward.png" alt="Previous Page" width="24" height="24">
+        </button>
+        
+        <div class="timeline">
+          <div
+            *ngFor="let question of paginatedQuestions; let i = index"
+            (click)="goToQuestion(currentPage * questionsPerPage + i)"
+            [ngClass]="getTimelineItemClass(currentPage * questionsPerPage + i)"
+            class="timeline-item"
+          >
+            {{ currentPage * questionsPerPage + i + 1 }}
+          </div>
+        </div>
+        
+        <button class="forward" (click)="nextPage()" [disabled]="currentPage >= Math.ceil(questions.length / questionsPerPage) - 1">
+          <img src="assets/forward.png" alt="Next Page" width="24" height="24">
+        </button>
+      </div>
+      
+
+      <!-- Question Section Starts Here -->
+      <div id="questionSection">
+        <h3>{{ currentQuestion?.question }}</h3>
+        <div id="optionsDiv">
+          <label *ngFor="let option of currentQuestion?.options; let i = index">
+            <input
+              type="radio"
+              name="option_{{ currentQuestion?.id }}"
+              [value]="i"
+              (change)="selectOption(i)"
+              [checked]="currentQuestion?.selectedOption === i"
+            >
+            {{ option }}
+          </label>
+        </div>
+        <div class="button-container">
+          <button (click)="previousQuestion()">Previous</button>
+          <button (click)="holdQuestion()">Hold</button>
+          <button (click)="nextQuestion()" [disabled]="!questionAnswered">Next</button>
+        </div>
+      </div>
+      <!-- Question Section Ends Here -->
+    </div>
+
+    <div class="footer">
+      <i class="fas fa-smile"></i>
+      <i class="fas fa-paperclip" (click)="triggerFileInput()"></i>
+      <input type="file" #fileInput hidden (change)="uploadFile($event)">
+      <input type="text" placeholder="Type a message" #messageInput>
+      <button type="button" (click)="sendMessage(messageInput.value)">
+        <i class="fas fa-paper-plane"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- The Modal -->
+  <div *ngIf="settingsVisible" id="settingsModal" class="modal">
+    <div class="modal-content">
+      <span class="close" (click)="closeSettings()">&times;</span>
+      <div class="settings-container">
+        <div class="settings-sidebar">
+          <div class="menu-item active" (click)="activateMenuItem('general-settings')">
+            <i class="fas fa-cogs"></i> General
+          </div>
+          <div class="menu-item" (click)="activateMenuItem('account-settings')">
+            <i class="fas fa-user"></i> Account
+          </div>
+          <div class="menu-item" (click)="activateMenuItem('chat-settings')">
+            <i class="fas fa-comments"></i> Chats
+          </div>
+          <div class="menu-item" (click)="activateMenuItem('notifications-settings')">
+            <i class="fas fa-bell"></i> Notifications
+          </div>
+          <div class="menu-item" (click)="activateMenuItem('storage-settings')">
+            <i class="fas fa-database"></i> Storage
+          </div>
+        </div>
+
+        <div class="settings-content">
+          <div id="general-settings" class="general-settings active">
+            <h2>General</h2>
+            <p><b>Login:</b> Start WhatsApp at login <input type="checkbox"></p>
+            <p><b>Language:</b>
+              <select>
+                <option>System default</option>
+              </select>
+            </p>
+            <p><b>Typing:</b> Replace text with emoji <input type="checkbox" checked></p>
+          </div>
+
+          <div id="account-settings" class="account-settings">
+            <h2>Account</h2>
+            <!-- Add account settings here -->
+          </div>
+
+          <div id="chat-settings" class="chat-settings">
+            <h2>Chats</h2>
+            <!-- Add chat settings here -->
+          </div>
+
+          <div id="notifications-settings" class="notifications-settings">
+            <h2>Notifications</h2>
+            <!-- Add notifications settings here -->
+          </div>
+
+          <div id="storage-settings" class="storage-settings">
+            <h2>Storage</h2>
+            <!-- Add storage settings here -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

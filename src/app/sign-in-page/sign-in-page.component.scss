@@ -1,0 +1,459 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Add dark mode styles */
+body.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
+
+header.dark-mode {
+    background-color: #444;
+    border-bottom: 1px solid #555;
+}
+
+.sign-up-btn.dark-mode {
+    background-color: #ff6600;
+    color: #fff;
+    border: 2px solid #ff6600;
+}
+
+.sign-up-btn.dark-mode:hover {
+    background-color: #fff;
+    color: #ff6600;
+}
+
+/* Theme toggle button */
+.theme-toggle-btn {
+    background-color: #ff6600;
+    color: #fff;
+    border: 2px solid #ff6600;
+    border-radius: 20px;
+    padding: 5px 15px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin-left: 10px;
+}
+
+.theme-toggle-btn.dark-mode {
+    background-color: #444;
+    color: #fff;
+    border-color: #444;
+}
+
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    position: fixed;
+    top: 0;
+    width: 93%;
+    z-index: 1000;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+
+.logo {
+    width: 50px; /* Adjust this size to fit the logo */
+    margin-right: 10px;
+}
+
+.app-name {
+    font-weight: bold;
+    font-size: 2rem;
+    color: #716262;
+}
+
+.action-container {
+    display: flex;
+    align-items: center;
+}
+
+.no-account {
+    margin-right: 10px; /* Adjust the margin to increase space between text and button */
+    font-size: 1rem;
+    color: #716262;
+}
+
+.sign-up-btn {
+    background-color: #ff6600;
+    color: #fff;
+    border: 2px solid #ff6600;
+    border-radius: 20px;
+    padding: 5px 15px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.sign-up-btn:hover {
+    background-color: #fff;
+    color: #ff6600;
+}
+
+.main-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 80px 0 50px 0; /* Adjust padding-top to compensate for fixed header */
+}
+
+.image-section {
+    position: relative;
+    max-width: 45%;
+    text-align: center;
+}
+
+.girl-image {
+    width: 100%;
+    height: auto;
+}
+
+.overlay-icons {
+    position: absolute;
+    top: 10%;
+    right: -10%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.overlay-item {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.overlay-item i {
+    font-size: 24px;
+    color: #ff6600;
+    margin-right: 10px;
+}
+
+.join-now-btn {
+    background-color: #ff4d4d;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+.join-now-btn:hover {
+    background-color: #e60000;
+}
+
+.form-section {
+    max-width: 400px;
+    padding: 20px;
+}
+
+.form-section h2 {
+    font-size: 24px;
+    margin-bottom: 26px;
+    color: #333;
+    
+}
+
+.form-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.form-group input[type="email"],
+.form-group input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #ff6600;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.remember-me input[type="checkbox"] {
+    margin-right: 10px;
+    margin-bottom: 8px;
+}
+
+.sign-in-btn {
+    background-color: #ff6600;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    width: 107%;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sign-in-btn i {
+    margin-left: 10px;
+}
+
+.sign-in-btn:hover {
+    background-color: #e55b00;
+}
+
+.social-login {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.social-login p {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #666;
+}
+
+.social-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.social-buttons button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    transition: background-color 0.3s ease;
+    background-color: #fff;
+    flex: 1;
+}
+
+.social-buttons button img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.social-buttons button:hover {
+    background-color: #f5f5f5;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: 5px;
+    display: block;
+}
+
+/* Responsive Styles */
+
+/* Adjust for screens smaller than 1200px */
+@media (max-width: 1200px) {
+    .main-content {
+        flex-direction: column;
+        align-items: center;
+        padding: 120px 20px 50px 20px;
+    }
+
+    .image-section {
+        max-width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .form-section {
+        max-width: 100%;
+        padding: 20px;
+
+    }
+}
+
+/* Adjust for screens smaller than 1024px */
+@media (max-width: 1024px) {
+    header {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .main-content {
+        padding-top: 140px; /* Adjust padding-top to compensate for fixed header */
+        margin-top: 120px; /* Increase margin-top for smaller screens */
+    }
+
+    .image-section {
+        max-width: 90%;
+    }
+
+    .form-section {
+        max-width: 90%;
+    }
+}
+
+/* Adjust for screens smaller than 768px */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 20px;
+    }
+
+    .logo-container {
+        margin-bottom: 10px;
+    }
+
+    .action-container {
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .main-content {
+        padding-top: 160px;
+        margin-top: 140px; /* Further increase for even smaller screens */
+    }
+
+    .image-section {
+        max-width: 80%;
+    }
+
+    .form-section {
+        max-width: 80%;
+    }
+}
+
+/* Adjust for screens smaller than 540px */
+@media (max-width: 540px) {
+    header {
+        padding: 10px 15px;
+    }
+
+    .main-content {
+        padding-top: 180px;
+        margin: 0 10px;
+        margin-top: 160px; /* Ensure enough space below the header */
+    }
+
+    .image-section {
+        max-width: 100%;
+    }
+
+    .form-section {
+        width: 100%;
+    }
+
+    .social-buttons {
+        flex-direction: column;
+    }
+}
+
+/* Adjust for screens smaller than 375px */
+@media (max-width: 375px) {
+    header {
+        padding: 10px 10px;
+    }
+
+    .main-content {
+        padding-top: 200px;
+        margin: 0 10px;
+        margin-top: 180px; /* Adjust for very small screens */
+    }
+
+    .image-section {
+        max-width: 100%;
+    }
+
+    .form-section {
+        width: 100%;
+    }
+
+    .social-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* Dark mode styles */
+.dark-mode {
+    /* background-color: #121212; */
+    color: #ffffff;
+}
+
+/* Ensure all text is white */
+.dark-mode .title,
+.dark-mode .highlight,
+.dark-mode header,
+.dark-mode .app-name,
+.dark-mode .sign-up-btn,
+.dark-mode .no-account,
+.dark-mode .form-group label,
+.dark-mode .sign-in-btn,
+.dark-mode .social-login p,
+.dark-mode .social-buttons button {
+    color: #ffffff;
+}
+
+/* Ensure all input fields have proper colors */
+.dark-mode input[type="email"],
+.dark-mode input[type="password"] {
+    background-color: #333333;
+    color: #ffffff;
+    border-color: #444444;
+}
+
+/* Style the social buttons */
+.dark-mode .social-buttons button {
+    background-color: #333333;
+    border-color: #444444;
+}
